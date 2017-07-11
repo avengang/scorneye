@@ -1,9 +1,17 @@
-/**
- * Created by avengang on 2017/6/3 0003.
- */
-module.exports.open = function() {
-    console.log("open the eyes");
-};
-module.exports.close = function() {
-    console.log("close the eyes");
-};
+import 'core-js/shim';
+
+export default class Person {
+
+  constructor( name ) {
+    this.name = name;
+  }
+
+  sayHello() {
+    return `Hello ${ this.name }!`;
+  }
+
+  sayHelloThreeTimes() {
+    let hello = this.sayHello();
+    return `${ hello } `.repeat(3);
+  }
+}
